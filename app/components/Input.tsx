@@ -26,6 +26,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
     return (
         <div>
+            {/* Label for input if needed */}
             {/* <label
                 htmlFor={id}
                 className="block text-sm font-medium leading-6 text-darkBlue"
@@ -42,12 +43,11 @@ const Input: React.FC<InputProps> = ({
                     {...register(id, { required })}
                     className={clsx(
                         `form-input
-                        pl-3
+                        p-6
                         block
                         w-full
-                        rounded-sm
+                        rounded-md
                         border-0
-                        py-5
                         bg-Input_bg
                         text-darkBlue
                         shadow-sm

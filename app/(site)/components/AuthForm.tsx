@@ -55,9 +55,9 @@ const AuthForm = () => {
     }, [variant])
 
     return (
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10 ">
-                <form className="space-y-6">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md p-5 md:p-0">
+            <div className="bg-white py-6  sm:rounded-lg sm:px-10 ">
+                <form className="flex flex-col gap-3">
                     {variant === 'REGISER' && (
                         <Input
                             id="name"
@@ -92,14 +92,14 @@ const AuthForm = () => {
                         </Button>
                     </div>
                 </form>
-                <div className="mt-6">
-                    <div className="w-full">
+                <div>
+                    <div className="w-full my-8">
                         <p className="text-gray-400 font-semibold flex justify-center">
                             OR
                         </p>
                     </div>
-                    <div className="mt-6">
-                        <div className="flex flex-col gap-2">
+                    <div>
+                        <div className="flex flex-col gap-3">
                             <AuthSocialButton
                                 icon={BsDiscord}
                                 text="Continue with Discord"
@@ -114,11 +114,15 @@ const AuthForm = () => {
                     </div>
                 </div>
                 <div className="flex gap-2 justify-center mt-6 text-darkBlue font-semibold">
-                    <div onClick={toggleVariant} className="cursor-pointer">
+                    <button
+                        type="button"
+                        onClick={toggleVariant}
+                        className="cursor-pointer"
+                    >
                         {variant === 'LOGIN'
                             ? 'Create an account'
                             : 'Already have an account?'}
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
