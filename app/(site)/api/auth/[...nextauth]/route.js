@@ -7,7 +7,7 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 
 import prisma from '@/app/libs/prismadb'
 
-const handler = {
+const handler = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
         DiscordProvider({
@@ -57,6 +57,6 @@ const handler = {
         strategy: 'jwt',
     },
     secret: process.env.NEXTAUTH_SECRET,
-}
+})
 
 export { handler as GET, handler as POST }
