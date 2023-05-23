@@ -7,16 +7,16 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 
 import prisma from '@/app/libs/prismadb'
 
-const authOptions: AuthOptions = {
+const authOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
         DiscordProvider({
-            clientId: process.env.GITHUB_ID as string,
-            clientSecret: process.env.GITHUB_SECRET as string,
+            clientId: process.env.GITHUB_ID,
+            clientSecret: process.env.GITHUB_SECRET,
         }),
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         }),
         CredentialsProvider({
             name: 'credentials',
