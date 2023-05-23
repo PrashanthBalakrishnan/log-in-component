@@ -55,9 +55,9 @@ const AuthForm = () => {
     }, [variant])
 
     return (
-        <div className="sm:mx-auto sm:w-full sm:max-w-md p-5 md:p-0">
-            <div className="bg-white py-6  sm:rounded-lg sm:px-10 ">
-                <form className="flex flex-col gap-3">
+        <div className="px-8 py-6">
+            <div>
+                <form className="flex flex-col gap-3 h-full">
                     {variant === 'REGISER' && (
                         <Input
                             id="name"
