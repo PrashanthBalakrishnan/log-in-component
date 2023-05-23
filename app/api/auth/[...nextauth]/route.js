@@ -7,7 +7,7 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 
 import prisma from '@/app/libs/prismadb'
 
-const authOptions = {
+const handler = {
     adapter: PrismaAdapter(prisma),
     providers: [
         DiscordProvider({
@@ -58,7 +58,5 @@ const authOptions = {
     },
     secret: process.env.NEXTAUTH_SECRET,
 }
-
-const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }
